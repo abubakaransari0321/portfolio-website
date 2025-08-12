@@ -1,0 +1,68 @@
+.cursor-dot {
+  width: 8px;
+  height: 8px;
+  background-color: var(--color-yellow);
+  border-radius: 50%;
+  position: fixed;
+  pointer-events: none;
+  z-index: 10000;
+  mix-blend-mode: difference;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.cursor-outline {
+  width: 30px;
+  height: 30px;
+  border: 2px solid rgba(255, 215, 0, 0.5);
+  border-radius: 50%;
+  position: fixed;
+  pointer-events: none;
+  z-index: 9999;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.cursor-dot.pointer {
+  transform: translate(-50%, -50%) scale(1.5);
+  background-color: var(--color-white);
+}
+
+.cursor-outline.pointer {
+  transform: translate(-50%, -50%) scale(1.5);
+  border-color: var(--color-yellow);
+  border-width: 3px;
+}
+
+/* Hide default cursor for elements that should have custom cursor */
+body {
+  cursor: none;
+}
+
+a, button, [role="button"], .cursor-pointer {
+  cursor: none !important;
+}
+
+/* Show default cursor on form elements for better UX */
+input, textarea, select {
+  cursor: text !important;
+}
+
+/* Mobile devices - hide custom cursor */
+@media (max-width: 768px) {
+  .cursor-dot,
+  .cursor-outline {
+    display: none;
+  }
+  
+  body {
+    cursor: auto;
+  }
+  
+  a, button, [role="button"], .cursor-pointer {
+    cursor: pointer !important;
+  }
+}
+
