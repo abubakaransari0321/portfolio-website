@@ -10,8 +10,13 @@
     "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
     "predeploy":"npm run build",
+<<<<<<< HEAD
     "deploy":"gh-pages -d dist"
     },
+=======
+    "deploy":"gh-pages -d build"
+  },
+>>>>>>> 78348b195de3fb8915b7f4077657ef745ad6d6ec
   "dependencies": {
     "framer-motion": "^12.23.12",
     "react": "^18.2.0",
